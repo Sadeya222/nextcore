@@ -1,4 +1,4 @@
-
+import dj_database_url
 from pathlib import Path
 import os
 
@@ -13,9 +13,9 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = "django-insecure-k9^y7wl4ti0rd5u_*-q^b!5=g7z%u=ir1^fyp9(j2t^949k@tu"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG", "False").lower() == 'true'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOST").split(" ")
 
 
 # Application definition
@@ -83,16 +83,13 @@ AUTH_USER_MODEL = 'accounts.Account'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 DATABASES = {
-  'default': {
-    'ENGINE': 'django.db.backends.postgresql',
-    'NAME': 'nextcore',
-    'USER': 'nextcore',
-    'PASSWORD': 'nextcore',
-    'HOST': 'nextcore.clescakool2l.us-east-1.rds.amazonaws.com',
-    'PORT': '5432',
-  }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
 
+DATABASES["default"] = dj_database_url.parse("postgres://meat_and_fish_user:HX2coEA2aC0emRD8lTFI7tWJ34fBWhbv@dpg-cmvr0f7109ks73bcod8g-a.oregon-postgres.render.com/meat_and_fish")
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -159,12 +156,3 @@ EMAIL_HOST_PASSWORD = 'qzgc dtft fhfi uwtu'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
-AWS_ACCESS_KEY_ID = 'AKIAZDXOD3QDZOXYBYWG'
-AWS_SECRET_ACCESS_KEY = 'pBO2SJFJPVLzUnfr4sYHKHfFQONRlB9ykZjCndQg'
-AWS_STORAGE_BUCKET_NAME = 'nextcoreec'
-AWS_S3_SIGNATURE_NAME =  's3v4'
-AWS_S3_REGION_NAME = 'us-east-1' # e.g., us-east-1
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = None
-AWS_S3_VERITY = True
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
