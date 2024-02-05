@@ -7,7 +7,7 @@ from django.conf import settings
 
 
 urlpatterns = [
-    path('nextcore/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('store/', include('store.urls')),
     path('cart/', include('carts.urls')),
