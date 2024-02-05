@@ -28,7 +28,6 @@ INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'admin_honeypot',
     'category',
     'accounts',
     'store',
