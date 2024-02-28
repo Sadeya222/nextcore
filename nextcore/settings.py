@@ -151,7 +151,7 @@ EMAIL_PORT = 587
 
 # Optional SMTP authentication information for EMAIL_HOST.
 EMAIL_HOST_USER = 'tarakkhan547@gmail.com'
-EMAIL_HOST_PASSWORD = 'qzgc dtft fhfi uwtu'
+EMAIL_HOST_PASSWORD = 'cgnt nfit zkpz wymr'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
