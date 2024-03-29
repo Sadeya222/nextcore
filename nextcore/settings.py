@@ -144,14 +144,14 @@ MESSAGE_TAGS = {
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # Host for sending e-mail.
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.hostinger.com'
 
 # Port for sending e-mail.
 EMAIL_PORT = 587
 
 # Optional SMTP authentication information for EMAIL_HOST.
-EMAIL_HOST_USER = 'tarakkhan547@gmail.com'
-EMAIL_HOST_PASSWORD = 'cgnt nfit zkpz wymr'
+EMAIL_HOST_USER = 'ventas@danielbenites.com'
+EMAIL_HOST_PASSWORD = 'E$ECF%Qwm?8?YMU'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
